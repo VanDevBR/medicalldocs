@@ -1,0 +1,351 @@
+FORMAT: 1A
+HOST: http://private-c62ea9-mdcll.apiary-mock.com
+# mdcll
+
+mdcll test api
+
+## Login [/login]
+
+## do login [POST]
+
++ Request (application/json)
+
+        {
+            "user": "teste@teste.com",
+            "password": "q1w2e3r4"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "user": {
+                    "id": 123,
+                    "nome": "Joaquim José da Silva Xavier",
+                    "email": "tira@dentes.com",
+                    "cpf": "123.123.123-24",
+                    "crm": "02699999",
+                    "uf": "RJ"
+                },
+                "token": "zaqxswdec23"
+            }
+
+## Token [/token]
+
+## verify [POST]
+
++ Request (application/json)
+
+        {
+            "token": "zaqxswdec23"
+        }
+
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "valid": true
+            }
+            
+            
+## SignUp [/signup]
+
+## doSignUp [POST] 
+
++ Request (application/json)
+    
+        {
+            "email":"123",
+            "password":"123",
+            "nome":"123",
+            "cpf":"123",
+            "crm":"123",
+            "uf":"123"
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "user": {
+                    "id": 123,
+                    "name": "Tester"
+                },
+                "token": "zaqxswdec23",
+                "msg": "O cpf informado já existe no sistema."
+            }
+            
+## forgotPass [/forgotPass]
+
+## forgotPass [POST] 
+
++ Request (application/json)
+    
+        {
+            "email":"teste@teste.com"
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "status": "ok"
+            }
+            
+            
+## Histórico de Recompensas [/rewards]
+
+## rewards [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "rewards": [
+                    {
+                        "data": "01/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "08/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "15/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "08/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "15/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "08/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "15/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "08/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "15/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "08/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "15/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "08/02/2018",
+                        "value": "R$ 100,00"
+                    },
+                    {
+                        "data": "15/02/2018",
+                        "value": "R$ 100,00"
+                    }
+                ],
+                "totalEarned": "R$ 300,00",
+                "totalAvailable": "R$ 300,00"
+            }
+
+
+## Histórico de Retiradas [/summary]
+
+## summary [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            [
+                {
+                    "data": "01/02/2018",
+                    "value": "R$ 100,00",
+                    "total": "R$ 100,00"
+                }
+            ]
+                           
+            
+## Regatar Valor [/redeem]
+
+## redeem [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321,
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "status": "ok"
+            }               
+        
+## Meus dados [/profile]
+
+## profile [POST] 
+
++ Request (application/json)
+    
+        {
+            "token":"q1w2e3r4"
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "nome": "Joaquim José da Silva Xavier",
+                "email": "tira@dentes.com",
+                "cpf": "123.123.123-24",
+                "crm": "02699999",
+                "uf": "RJ"
+            }            
+                
+        
+## Troca de Senha [/changePass]
+
+## changePass [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321,
+            "password": "q1w2e3er4",
+            "newPassword": "qwer1234"
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "msg": "Senha Inválida"
+            }            
+            
+## Salvar dados bancários [/saveBank]
+
+## saveBank [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321,
+            "bank": "171 - Banco do Cacique",
+            "agency": "007",
+            "accountNumber": "1232123"
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "status": "ok",
+                "msg": "Deu ruim!"
+            }         
+            
+## Recuperar dados bancários [/bank]
+
+## bank [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            {
+                "bank": "001 - BANCO DO BRASIL S.A.",
+                "agency": "007",
+                "accountNumber": "1232123"
+            }            
+                  
+## Recuperar Pesquisas Pendentes [/quests]
+
+## quests [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            [
+                {
+                    "id": 123,
+                    "title": "Medicina Geral",
+                    "expDate": "01/03/2018",
+                    "description": "A edição mais recente do estudo Demografia Médica no Brasil (2015), do Conselho Federal de Medicina, revelou alguns aspectos práticos da rotina profissional do médico.",
+                    "imageUrl": "https://images.pexels.com/photos/258205/pexels-photo-258205.jpeg?h=350&auto=compress&cs=tinysrgb"
+                },
+                {   
+                    "id": 321,
+                    "title": "Cuidado ao Paciente",
+                    "expDate": "01/04/2018",
+                    "description": "Viabilizar o cuidado do paciente com segurança é tema de grande de preocupação em todo o mundo, sendo inclusive alvo de Aliança Mundial criada pela OMS."
+                }
+            ]
+            
+## Recuperar Pesquisas Respondidas [/answered]
+
+## answered [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+    
+            [
+                {
+                    "id": 456,
+                    "title": "Sobre Você",
+                    "expDate": "01/02/2018",
+                    "description": "Você já parou para pensar se as suas atitudes perante o próximo são dignas e corretas? Como é o seu papel na sociedade?"
+                }
+            ]
