@@ -28,10 +28,10 @@ mdcll test api
                     "crm": "02699999",
                     "uf": "RJ"
                 },
-                "token": "zaqxswdec23"
+                "access_token": "zaqxswdec23"
             }
 
-## Token [/token]
+## Token [/validate]
 
 ## verify [POST]
 
@@ -46,7 +46,21 @@ mdcll test api
     + Body
     
             {
-                "valid": true
+               "companyId": "4",
+               "roles": [
+                   {
+                       "authority": "ROLE_ADMIN_COMPANY"
+                   }
+               ],
+               "id": "14",
+               "company": "Lorem Ipsum Fantasia",
+               "token_type": "Bearer",
+               "refresh_token": null,
+               "expires_in": "3557",
+               "username": "operador4",
+               "email": "operador@efabrika.com.br",
+               "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSldUUDI4VE1SakczNFJFYVZXcHRQd1RESVZJbEEyNVVzbVdoVFJOVWRBMXFRZ1pLRklyMzUwVDNQak9oKzFya3dHVWlRNlZLQUlxSVpENEJQMGVETER3QVJBZ3NYWm01WFgrOU5LcHdwUFBmdjE3SGo5KzdcL2dFc2xyQkxWY1JUd1lrWUQ3M3FCQ0VScHcwTlZPcnpGQXU5T2V0d29zdnJcL2RcL3B5SGpRQTRySXhyMkRGeHlkdWd1WFJJMGJDODFqT0podStqQTlHaTc2aitIbDVCeUlNc0NaSXcrTWlFTjJHRGVWWEN2clN5ZFJDSnU4NURveUNJMDgyTEZUWVwvRXFPOFA5Y21EUWFGMUJNT1JTbHRhbXZ0blhkVGRIZWFaSXJLWHBXcVBpQzJGbW50U2RjZ3AyNU9LblJGSTBLbVBhY2h0d2p6MVBCbUhwaWJEU2pmaWl2bWJNSmVzT2RMcjJLV3JIdTZ3MEhBcTlHUnBqb1hVRmN4M1lJYkc1cGxFVmM2MGdZdERzN0hoWXFuQkRPWTFGVkd0MGQwNHJpbHJLMGtwU3VIQUo3cGp6eEY3anBTbEVIaExMa085MkF3RDZmTVd0MkxJNnkrOFwvWDc0cWQ5TUEyQUdkODhcL2s2emZXSUgrMTYyXC9Od2ZCcGp3RDF5YXNKbVhGYm9SdTVoUHlZOFdzOG84UEcrK09UdmFmWGtCbFc3SDJcL1wva3Zsa1pKOWNxMmhSUTFjdUpORUx1WHNYT0VyNXdQSDZmZUl3MGVSSUpoQjRXRythY1NDZGgycFpKaW5EYzIxS082VTlrdXJhNVhhOXZsK3ZwR3FmYkVMa1wvTGlDbnFTMVZBQjdPREFHelBFVWRpM3hcLzhlZlB0OFBaUHBEMkU3QzRWTWNQODU1S2lXaHk0VEwwNlBscVllZlwvcllIQ2JVU2ZQR3JqaW9PTWdYNDEwSE9UWDBDZlZuQnBJRlF4Y0g0dmVaeTNxS3Q2aGd4XC9WVlFZdTEwZGJlWlwvbUswR2ttS2JcL0FCUW5heEhRQXdBQSIsInN1YiI6Im9wZXJhZG9yNCIsInJvbGVzIjpbIlJPTEVfQURNSU5fQ09NUEFOWSJdLCJleHAiOjE1MjE3NTUwNjYsImlhdCI6MTUyMTc1MTQ2Nn0.NAWRDiDeFZYTJ4YpprYpcAzWTj50ik1TQwseyNUPLJg",
+               "name": "Operador da Empresa"
             }
             
             
@@ -349,3 +363,309 @@ mdcll test api
                     "description": "Você já parou para pensar se as suas atitudes perante o próximo são dignas e corretas? Como é o seu papel na sociedade?"
                 }
             ]
+            
+            
+## Responder questão [/enviarResposta]
+
+## answered [POST] 
+
+Envia todas as respostas no fim da campanha
+
++ Request (application/json)
+    
+        {
+            "userId": 2321
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+            
+            {
+                "userId": 456,
+                "campanhaId": 123,
+                "respostas": [
+                    {
+                        "respostaId": 123,
+                        "valor": "jsdahdosajdpasjdsak",
+                    },
+                    {
+                        "respostaId": 456,
+                        "valor": "jsdahdosajdpasjdsak",
+                    },
+                    {
+                        "respostaId": 789,
+                        "valor": null,
+                    }
+                ]
+            }
+            
+            
+## Responder questão [/iniciarCampanha]
+
+## answered [POST] 
+
++ Request (application/json)
+    
+        {
+            "userId": 2321,
+            "campanhaId": 123,
+        }
+        
++ Response 200 (application/json)
+        
+    + Body
+            
+            {
+                "id": 70,
+                "titulo": "Perguntas sobre atendimento ao cliente do mercado B2B",
+                "descricao": "Modelo de questionário sobre atendimento ao cliente",
+                "paginas": [
+                    {
+                        "id": 863,
+                        "itensPagina": [
+                            {
+                                "id": 936,
+                                "tipo": "P",
+                                "pergunta": "Seu relacionamento com a nossa empresa está atualmente ativo ou não existe mais um vínculo comercial conosco?",
+                                "tipoResposta": "2",
+                                "escalaDe": null,
+                                "escalaAte": null,
+                                "opcoesResposta": [
+                                    {
+                                        "id": 2792,
+                                        "valor": "Estamos desenvolvendo um projeto juntos",
+                                        "targetPagina": 863,
+                                        "targetItemPagina": 936
+                                    },
+                                    {
+                                        "id": 2793,
+                                        "valor": "Apenas compramos raramente alguns produtos ou serviços de vocês",
+                                        "targetPagina": 863,
+                                        "targetItemPagina": 936
+                                    },
+                                    {
+                                        "id": 2794,
+                                        "valor": "Fizemos negócios no passado.",
+                                        "targetPagina": 863,
+                                        "targetItemPagina": 936
+                                    },
+                                    {
+                                        "id": 2795,
+                                        "valor": "Nosso relacionamento está encerrado",
+                                        "targetPagina": 863,
+                                        "targetItemPagina": 936
+                                    }
+                                ],
+                                "targetPagina": 863,
+                                "targetItemPagina": 936
+                            }
+                        ],
+                        "respostasCondicionadas": [],
+                        "targetPagina": 863,
+                        "paginaId": null
+                    },
+                    {
+                        "id": 864,
+                        "itensPagina": [
+                            {
+                                "id": 937,
+                                "tipo": "P",
+                                "pergunta": "Como seu gerente de conta está auxiliando em seu projeto ou ajudou no passado?",
+                                "tipoResposta": "2",
+                                "escalaDe": null,
+                                "escalaAte": null,
+                                "opcoesResposta": [
+                                    {
+                                        "id": 2796,
+                                        "valor": "Extremamente bem",
+                                        "targetPagina": 864,
+                                        "targetItemPagina": 937
+                                    },
+                                    {
+                                        "id": 2797,
+                                        "valor": "Muito bem",
+                                        "targetPagina": 864,
+                                        "targetItemPagina": 937
+                                    },
+                                    {
+                                        "id": 2798,
+                                        "valor": "Bem",
+                                        "targetPagina": 864,
+                                        "targetItemPagina": 937
+                                    },
+                                    {
+                                        "id": 2799,
+                                        "valor": "Nada bem",
+                                        "targetPagina": 864,
+                                        "targetItemPagina": 937
+                                    }
+                                ],
+                                "targetPagina": 864,
+                                "targetItemPagina": 937
+                            }
+                        ],
+                        "respostasCondicionadas": [],
+                        "targetPagina": 864,
+                        "paginaId": null
+                    },
+                    {
+                        "id": 865,
+                        "itensPagina": [
+                            {
+                                "id": 938,
+                                "tipo": "P",
+                                "pergunta": "De modo geral, como você avalia a qualidade do atendimento ao cliente realizado por nossa empresa?",
+                                "tipoResposta": "5",
+                                "escalaDe": null,
+                                "escalaAte": null,
+                                "opcoesResposta": [
+                                    {
+                                        "id": 2800,
+                                        "valor": "",
+                                        "targetPagina": 865,
+                                        "targetItemPagina": 938
+                                    }
+                                ],
+                                "targetPagina": 865,
+                                "targetItemPagina": 938
+                            }
+                        ],
+                        "respostasCondicionadas": [],
+                        "targetPagina": 865,
+                        "paginaId": null
+                    },
+                    {
+                        "id": 866,
+                        "itensPagina": [
+                            {
+                                "id": 939,
+                                "tipo": "P",
+                                "pergunta": "Qual a possibilidade, em uma escala de 0 a 10, de você indicar os serviços ou produtos de nossa empresa para um amigo ou conhecido?",
+                                "tipoResposta": "4",
+                                "escalaDe": 1,
+                                "escalaAte": 1,
+                                "opcoesResposta": [
+                                    {
+                                        "id": 2803,
+                                        "valor": "1",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2804,
+                                        "valor": "2",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2805,
+                                        "valor": "3",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2806,
+                                        "valor": "4",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2807,
+                                        "valor": "5",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2808,
+                                        "valor": "6",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2809,
+                                        "valor": "7",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2810,
+                                        "valor": "8",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2811,
+                                        "valor": "9",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    },
+                                    {
+                                        "id": 2812,
+                                        "valor": "10",
+                                        "targetPagina": 866,
+                                        "targetItemPagina": 939
+                                    }
+                                ],
+                                "targetPagina": 866,
+                                "targetItemPagina": 939
+                            }
+                        ],
+                        "respostasCondicionadas": [],
+                        "targetPagina": 866,
+                        "paginaId": null
+                    },
+                    {
+                        "id": 867,
+                        "itensPagina": [
+                            {
+                                "id": 940,
+                                "tipo": "P",
+                                "pergunta": "Faria negócio novamente?",
+                                "tipoResposta": "1",
+                                "escalaDe": null,
+                                "escalaAte": null,
+                                "opcoesResposta": [
+                                    {
+                                        "id": 2801,
+                                        "valor": "Sim",
+                                        "targetPagina": 867,
+                                        "targetItemPagina": 940
+                                    },
+                                    {
+                                        "id": 2802,
+                                        "valor": "Não",
+                                        "targetPagina": 867,
+                                        "targetItemPagina": 940
+                                    }
+                                ],
+                                "targetPagina": 867,
+                                "targetItemPagina": 940
+                            }
+                        ],
+                        "respostasCondicionadas": [],
+                        "targetPagina": 867,
+                        "paginaId": null
+                    }
+                ],
+                "nomeEmpresa": null
+            }
+            
+## Consultar Cep [/cep]
+## cep [GET]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "uf": "RJ",
+                "complemento": "",
+                "logradouro": "Rua Hannibal Porto",
+                "bairro": "Irajá",
+                "localidade": "Rio de Janeiro",
+                "ibge": "3304557",
+                "unidade": "",
+                "gia": "",
+                "cep": "21230-330"
+            }
