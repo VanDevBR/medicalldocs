@@ -246,7 +246,20 @@ mdcll test api
                 "cpf": "123.123.123-24",
                 "crm": "02699999",
                 "uf": "RJ"
-            }            
+            }     
+            
+            <!--{-->
+            <!--    "nome": "Joaquim José da Silva Xavier",-->
+            <!--    "email": "tira@dentes.com",-->
+            <!--    "cpf": "123.123.123-24",-->
+            <!--    "crm": "02699999",-->
+            <!--    "logradouro": "AV. DOS MANANCIAIS",-->
+            <!--    "numero": "8000",-->
+            <!--    "complemento": "FD",-->
+            <!--    "bairro": "TAQUARA",-->
+            <!--    "cidade": "RIO DE JANEIRO",-->
+            <!--    "uf": "RJ"-->
+            <!--}-->
                 
         
 ## Troca de Senha [/changePass]
@@ -289,7 +302,12 @@ mdcll test api
             {
                 "status": "ok",
                 "msg": "Deu ruim!"
-            }         
+            }   
+            
+            <!--{-->
+            <!--    "status": 200,-->
+            <!--    "msg": "Ocorreu um erro ao realizar esta operação."-->
+            <!--}-->
             
 ## Recuperar dados bancários [/bank]
 
@@ -367,7 +385,7 @@ mdcll test api
             
 ## Responder questão [/enviarResposta]
 
-## answered [POST] 
+## enviarResposta [POST] 
 
 Envia todas as respostas no fim da campanha
 
@@ -401,9 +419,9 @@ Envia todas as respostas no fim da campanha
             }
             
             
-## Responder questão [/iniciarCampanha]
+## Obter questionário [/iniciarCampanha]
 
-## answered [POST] 
+## iniciarCampanha [POST] 
 
 + Request (application/json)
     
@@ -417,239 +435,280 @@ Envia todas as respostas no fim da campanha
     + Body
             
             {
-                "id": 70,
-                "titulo": "Perguntas sobre atendimento ao cliente do mercado B2B",
-                "descricao": "Modelo de questionário sobre atendimento ao cliente",
-                "paginas": [
+              "id": 70,
+              "titulo": "Perguntas sobre atendimento ao cliente do mercado B2B",
+              "descricao": "Modelo de questionário sobre atendimento ao cliente",
+              "paginas": [
+                {
+                  "id": 863,
+                  "itensPagina": [
                     {
-                        "id": 863,
-                        "itensPagina": [
-                            {
-                                "id": 936,
-                                "tipo": "P",
-                                "pergunta": "Seu relacionamento com a nossa empresa está atualmente ativo ou não existe mais um vínculo comercial conosco?",
-                                "tipoResposta": "2",
-                                "escalaDe": null,
-                                "escalaAte": null,
-                                "opcoesResposta": [
-                                    {
-                                        "id": 2792,
-                                        "valor": "Estamos desenvolvendo um projeto juntos",
-                                        "targetPagina": 863,
-                                        "targetItemPagina": 936
-                                    },
-                                    {
-                                        "id": 2793,
-                                        "valor": "Apenas compramos raramente alguns produtos ou serviços de vocês",
-                                        "targetPagina": 863,
-                                        "targetItemPagina": 936
-                                    },
-                                    {
-                                        "id": 2794,
-                                        "valor": "Fizemos negócios no passado.",
-                                        "targetPagina": 863,
-                                        "targetItemPagina": 936
-                                    },
-                                    {
-                                        "id": 2795,
-                                        "valor": "Nosso relacionamento está encerrado",
-                                        "targetPagina": 863,
-                                        "targetItemPagina": 936
-                                    }
-                                ],
-                                "targetPagina": 863,
-                                "targetItemPagina": 936
-                            }
-                        ],
-                        "respostasCondicionadas": [],
-                        "targetPagina": 863,
-                        "paginaId": null
-                    },
-                    {
-                        "id": 864,
-                        "itensPagina": [
-                            {
-                                "id": 937,
-                                "tipo": "P",
-                                "pergunta": "Como seu gerente de conta está auxiliando em seu projeto ou ajudou no passado?",
-                                "tipoResposta": "2",
-                                "escalaDe": null,
-                                "escalaAte": null,
-                                "opcoesResposta": [
-                                    {
-                                        "id": 2796,
-                                        "valor": "Extremamente bem",
-                                        "targetPagina": 864,
-                                        "targetItemPagina": 937
-                                    },
-                                    {
-                                        "id": 2797,
-                                        "valor": "Muito bem",
-                                        "targetPagina": 864,
-                                        "targetItemPagina": 937
-                                    },
-                                    {
-                                        "id": 2798,
-                                        "valor": "Bem",
-                                        "targetPagina": 864,
-                                        "targetItemPagina": 937
-                                    },
-                                    {
-                                        "id": 2799,
-                                        "valor": "Nada bem",
-                                        "targetPagina": 864,
-                                        "targetItemPagina": 937
-                                    }
-                                ],
-                                "targetPagina": 864,
-                                "targetItemPagina": 937
-                            }
-                        ],
-                        "respostasCondicionadas": [],
-                        "targetPagina": 864,
-                        "paginaId": null
-                    },
-                    {
-                        "id": 865,
-                        "itensPagina": [
-                            {
-                                "id": 938,
-                                "tipo": "P",
-                                "pergunta": "De modo geral, como você avalia a qualidade do atendimento ao cliente realizado por nossa empresa?",
-                                "tipoResposta": "5",
-                                "escalaDe": null,
-                                "escalaAte": null,
-                                "opcoesResposta": [
-                                    {
-                                        "id": 2800,
-                                        "valor": "",
-                                        "targetPagina": 865,
-                                        "targetItemPagina": 938
-                                    }
-                                ],
-                                "targetPagina": 865,
-                                "targetItemPagina": 938
-                            }
-                        ],
-                        "respostasCondicionadas": [],
-                        "targetPagina": 865,
-                        "paginaId": null
-                    },
-                    {
-                        "id": 866,
-                        "itensPagina": [
-                            {
-                                "id": 939,
-                                "tipo": "P",
-                                "pergunta": "Qual a possibilidade, em uma escala de 0 a 10, de você indicar os serviços ou produtos de nossa empresa para um amigo ou conhecido?",
-                                "tipoResposta": "4",
-                                "escalaDe": 1,
-                                "escalaAte": 1,
-                                "opcoesResposta": [
-                                    {
-                                        "id": 2803,
-                                        "valor": "1",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2804,
-                                        "valor": "2",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2805,
-                                        "valor": "3",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2806,
-                                        "valor": "4",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2807,
-                                        "valor": "5",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2808,
-                                        "valor": "6",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2809,
-                                        "valor": "7",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2810,
-                                        "valor": "8",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2811,
-                                        "valor": "9",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    },
-                                    {
-                                        "id": 2812,
-                                        "valor": "10",
-                                        "targetPagina": 866,
-                                        "targetItemPagina": 939
-                                    }
-                                ],
-                                "targetPagina": 866,
-                                "targetItemPagina": 939
-                            }
-                        ],
-                        "respostasCondicionadas": [],
-                        "targetPagina": 866,
-                        "paginaId": null
-                    },
-                    {
-                        "id": 867,
-                        "itensPagina": [
-                            {
-                                "id": 940,
-                                "tipo": "P",
-                                "pergunta": "Faria negócio novamente?",
-                                "tipoResposta": "1",
-                                "escalaDe": null,
-                                "escalaAte": null,
-                                "opcoesResposta": [
-                                    {
-                                        "id": 2801,
-                                        "valor": "Sim",
-                                        "targetPagina": 867,
-                                        "targetItemPagina": 940
-                                    },
-                                    {
-                                        "id": 2802,
-                                        "valor": "Não",
-                                        "targetPagina": 867,
-                                        "targetItemPagina": 940
-                                    }
-                                ],
-                                "targetPagina": 867,
-                                "targetItemPagina": 940
-                            }
-                        ],
-                        "respostasCondicionadas": [],
-                        "targetPagina": 867,
-                        "paginaId": null
+                      "id": 936,
+                      "tipo": "P",
+                      "pergunta": "Seu relacionamento com a nossa empresa está atualmente ativo ou não existe mais um vínculo comercial conosco?",
+                      "tipoResposta": "2",
+                      "escalaDe": null,
+                      "escalaAte": null,
+                      "opcoesResposta": [
+                        {
+                          "id": 2792,
+                          "valor": "Estamos desenvolvendo um projeto juntos",
+                          "targetPagina": 863,
+                          "targetItemPagina": 936
+                        },
+                        {
+                          "id": 2793,
+                          "valor": "Apenas compramos raramente alguns produtos ou serviços de vocês",
+                          "targetPagina": 863,
+                          "targetItemPagina": 936
+                        },
+                        {
+                          "id": 2794,
+                          "valor": "Fizemos negócios no passado.",
+                          "targetPagina": 863,
+                          "targetItemPagina": 936
+                        },
+                        {
+                          "id": 2795,
+                          "valor": "Nosso relacionamento está encerrado",
+                          "targetPagina": 863,
+                          "targetItemPagina": 936
+                        }
+                      ],
+                      "targetPagina": 863,
+                      "targetItemPagina": 936
                     }
-                ],
-                "nomeEmpresa": null
-            }
+                  ],
+                  "respostasCondicionadas": [],
+                  "targetPagina": 863,
+                  "paginaId": null
+                },
+                {
+                  "id": 864,
+                  "itensPagina": [
+                    {
+                      "id": 937,
+                      "tipo": "P",
+                      "pergunta": "Como seu gerente de conta está auxiliando em seu projeto ou ajudou no passado?",
+                      "tipoResposta": "2",
+                      "escalaDe": null,
+                      "escalaAte": null,
+                      "opcoesResposta": [
+                        {
+                          "id": 2796,
+                          "valor": "Extremamente bem",
+                          "targetPagina": 864,
+                          "targetItemPagina": 937
+                        },
+                        {
+                          "id": 2797,
+                          "valor": "Muito bem",
+                          "targetPagina": 864,
+                          "targetItemPagina": 937
+                        },
+                        {
+                          "id": 2798,
+                          "valor": "Bem",
+                          "targetPagina": 864,
+                          "targetItemPagina": 937
+                        },
+                        {
+                          "id": 2799,
+                          "valor": "Nada bem",
+                          "targetPagina": 864,
+                          "targetItemPagina": 937
+                        }
+                      ],
+                      "targetPagina": 864,
+                      "targetItemPagina": 937
+                    }
+                  ],
+                  "respostasCondicionadas": [],
+                  "targetPagina": 864,
+                  "paginaId": null
+                },
+                {
+                  "id": 865,
+                  "itensPagina": [
+                    {
+                      "id": 938,
+                      "tipo": "P",
+                      "pergunta": "De modo geral, como você avalia a qualidade do atendimento ao cliente realizado por nossa empresa?",
+                      "tipoResposta": "5",
+                      "escalaDe": null,
+                      "escalaAte": null,
+                      "opcoesResposta": [
+                        {
+                          "id": 2800,
+                          "valor": "",
+                          "targetPagina": 865,
+                          "targetItemPagina": 938
+                        }
+                      ],
+                      "targetPagina": 865,
+                      "targetItemPagina": 938
+                    }
+                  ],
+                  "respostasCondicionadas": [],
+                  "targetPagina": 865,
+                  "paginaId": null
+                },
+                {
+                  "id": 866,
+                  "itensPagina": [
+                    {
+                      "id": 939,
+                      "tipo": "P",
+                      "pergunta": "Qual a possibilidade, em uma escala de 0 a 10, de você indicar os serviços ou produtos de nossa empresa para um amigo ou conhecido?",
+                      "tipoResposta": "4",
+                      "escalaDe": 1,
+                      "escalaAte": 10,
+                      "opcoesResposta": [
+                        {
+                          "id": 2803,
+                          "valor": "1",
+                          "targetPagina": 866,
+                          "targetItemPagina": 939
+                        },
+                        {
+                          "id": 2804,
+                          "valor": "2",
+                          "targetPagina": 866,
+                          "targetItemPagina": 939
+                        },
+                        {
+                          "id": 2805,
+                          "valor": "3",
+                          "targetPagina": 866,
+                          "targetItemPagina": 939
+                        },
+                        {
+                          "id": 2806,
+                          "valor": "4",
+                          "targetPagina": 866,
+                          "targetItemPagina": 939
+                        },
+                        {
+                          "id": 2807,
+                          "valor": "5",
+                          "targetPagina": 866,
+                          "targetItemPagina": 939
+                        }
+                      ],
+                      "targetPagina": 866,
+                      "targetItemPagina": 939
+                    }
+                  ],
+                  "respostasCondicionadas": [],
+                  "targetPagina": 866,
+                  "paginaId": null
+                },
+                {
+                  "id": 867,
+                  "itensPagina": [
+                    {
+                        "id": 943,
+                        "tipo": "V",
+                        "url": "https://www.youtube.com/embed/lKDCjqB_AkQ",
+                        "targetPagina": 868,
+                        "targetItemPagina": 943
+                    },
+                    {
+                      "id": 940,
+                      "tipo": "P",
+                      "pergunta": "Faria negócio novamente?",
+                      "tipoResposta": "1",
+                      "escalaDe": null,
+                      "escalaAte": null,
+                      "opcoesResposta": [
+                        {
+                          "id": 2801,
+                          "valor": "Sim",
+                          "targetPagina": 867,
+                          "targetItemPagina": 940
+                        },
+                        {
+                          "id": 2802,
+                          "valor": "Não",
+                          "targetPagina": 867,
+                          "targetItemPagina": 940
+                        }
+                      ],
+                      "targetPagina": 867,
+                      "targetItemPagina": 940
+                    }
+                  ],
+                  "respostasCondicionadas": [],
+                  "targetPagina": 867,
+                  "paginaId": null
+                },
+                {
+                    "id": 868,
+                    "itensPagina": [
+                        {
+                            "id": 944,
+                            "tipo": "I",
+                            "targetPagina": 868,
+                            "targetItemPagina": 944,
+                            "previewsImagens": [
+                                {
+                                    "id": 138,
+                                    "preview": "http://s3.amazonaws.com/medicall-data/dev/questionarios/imagens/944/1519488924153.jpeg"
+                                },
+                                {
+                                    "id": 138,
+                                    "preview": "http://s3.amazonaws.com/medicall-data/dev/questionarios/imagens/944/1519488924153.jpeg"
+                                },
+                                {
+                                    "id": 138,
+                                    "preview": "http://s3.amazonaws.com/medicall-data/dev/questionarios/imagens/944/1519488924153.jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 1047,
+                            "tipo": "P",
+                            "pergunta": "Quais imagens são as mais belas?",
+                            "tipoResposta": "3",
+                            "escalaDe": null,
+                            "escalaAte": null,
+                            "opcoesResposta": [
+                                {
+                                    "id": 328710912,
+                                    "valor": "A primeira",
+                                    "targetPagina": 863,
+                                    "targetItemPagina": 936
+                                },
+                                {
+                                    "id": 328710943,
+                                    "valor": "A segunda",
+                                    "targetPagina": 863,
+                                    "targetItemPagina": 936
+                                },
+                                {
+                                    "id": 328710954,
+                                    "valor": "A treceira",
+                                    "targetPagina": 863,
+                                    "targetItemPagina": 936
+                                },
+                                {
+                                    "id": 328710965,
+                                    "valor": "A quarta",
+                                    "targetPagina": 863,
+                                    "targetItemPagina": 936
+                                }
+                            ],
+                            "targetPagina": 863,
+                            "targetItemPagina": 936
+                        }
+                    ],
+                    "respostasCondicionadas": [],
+                    "targetPagina": 868,
+                    "paginaId": null
+                }
+              ],
+              "nomeEmpresa": null
+            }    
             
 ## Consultar Cep [/cep]
 ## cep [GET]
