@@ -18,7 +18,7 @@ mdcll test api
 + Response 200 (application/json)
 
     + Body
-    
+
             {
                 "user": {
                     "id": 123,
@@ -42,9 +42,9 @@ mdcll test api
         }
 
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                "companyId": "4",
                "roles": [
@@ -62,14 +62,13 @@ mdcll test api
                "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSldUUDI4VE1SakczNFJFYVZXcHRQd1RESVZJbEEyNVVzbVdoVFJOVWRBMXFRZ1pLRklyMzUwVDNQak9oKzFya3dHVWlRNlZLQUlxSVpENEJQMGVETER3QVJBZ3NYWm01WFgrOU5LcHdwUFBmdjE3SGo5KzdcL2dFc2xyQkxWY1JUd1lrWUQ3M3FCQ0VScHcwTlZPcnpGQXU5T2V0d29zdnJcL2RcL3B5SGpRQTRySXhyMkRGeHlkdWd1WFJJMGJDODFqT0podStqQTlHaTc2aitIbDVCeUlNc0NaSXcrTWlFTjJHRGVWWEN2clN5ZFJDSnU4NURveUNJMDgyTEZUWVwvRXFPOFA5Y21EUWFGMUJNT1JTbHRhbXZ0blhkVGRIZWFaSXJLWHBXcVBpQzJGbW50U2RjZ3AyNU9LblJGSTBLbVBhY2h0d2p6MVBCbUhwaWJEU2pmaWl2bWJNSmVzT2RMcjJLV3JIdTZ3MEhBcTlHUnBqb1hVRmN4M1lJYkc1cGxFVmM2MGdZdERzN0hoWXFuQkRPWTFGVkd0MGQwNHJpbHJLMGtwU3VIQUo3cGp6eEY3anBTbEVIaExMa085MkF3RDZmTVd0MkxJNnkrOFwvWDc0cWQ5TUEyQUdkODhcL2s2emZXSUgrMTYyXC9Od2ZCcGp3RDF5YXNKbVhGYm9SdTVoUHlZOFdzOG84UEcrK09UdmFmWGtCbFc3SDJcL1wva3Zsa1pKOWNxMmhSUTFjdUpORUx1WHNYT0VyNXdQSDZmZUl3MGVSSUpoQjRXRythY1NDZGgycFpKaW5EYzIxS082VTlrdXJhNVhhOXZsK3ZwR3FmYkVMa1wvTGlDbnFTMVZBQjdPREFHelBFVWRpM3hcLzhlZlB0OFBaUHBEMkU3QzRWTWNQODU1S2lXaHk0VEwwNlBscVllZlwvcllIQ2JVU2ZQR3JqaW9PTWdYNDEwSE9UWDBDZlZuQnBJRlF4Y0g0dmVaeTNxS3Q2aGd4XC9WVlFZdTEwZGJlWlwvbUswR2ttS2JcL0FCUW5heEhRQXdBQSIsInN1YiI6Im9wZXJhZG9yNCIsInJvbGVzIjpbIlJPTEVfQURNSU5fQ09NUEFOWSJdLCJleHAiOjE1MjE3NTUwNjYsImlhdCI6MTUyMTc1MTQ2Nn0.NAWRDiDeFZYTJ4YpprYpcAzWTj50ik1TQwseyNUPLJg",
                "name": "Operador da Empresa"
             }
-            
-            
+
 ## SignUp [/signup]
 
 ## doSignUp [POST] 
 
 + Request (application/json)
-    
+
         {
             "email":"123",
             "password":"123",
@@ -78,11 +77,11 @@ mdcll test api
             "crm":"123",
             "uf":"123"
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                 "user": {
                     "id": 123,
@@ -91,40 +90,39 @@ mdcll test api
                 "token": "zaqxswdec23",
                 "msg": "O cpf informado já existe no sistema."
             }
-            
+
 ## forgotPass [/forgotPass]
 
 ## forgotPass [POST] 
 
 + Request (application/json)
-    
+
         {
             "email":"teste@teste.com"
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                 "status": "ok"
             }
-            
-            
+
 ## Histórico de Recompensas [/rewards]
 
 ## rewards [POST] 
 
 + Request (application/json)
-    
+
         {
             "userId": 2321
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                 "rewards": [
                     {
@@ -184,21 +182,20 @@ mdcll test api
                 "totalAvailable": "R$ 300,00"
             }
 
-
 ## Histórico de Retiradas [/summary]
 
 ## summary [POST] 
 
 + Request (application/json)
-    
+
         {
             "userId": 2321
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             [
                 {
                     "data": "01/02/2018",
@@ -206,88 +203,78 @@ mdcll test api
                     "total": "R$ 100,00"
                 }
             ]
-                           
-            
+
 ## Regatar Valor [/redeem]
 
 ## redeem [POST] 
 
 + Request (application/json)
-    
+
         {
             "userId": 2321,
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                 "status": "ok"
-            }               
-        
+            }
+
 ## Meus dados [/profile]
 
 ## profile [POST] 
 
 + Request (application/json)
-    
+
         {
             "token":"q1w2e3r4"
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                 "nome": "Joaquim José da Silva Xavier",
                 "email": "tira@dentes.com",
                 "cpf": "123.123.123-24",
                 "crm": "02699999",
+                "logradouro": "AV. DOS MANANCIAIS",
+                "numero": "8000",
+                "complemento": "FD",
+                "bairro": "TAQUARA",
+                "cidade": "RIO DE JANEIRO",
                 "uf": "RJ"
-            }     
-            
-            <!--{-->
-            <!--    "nome": "Joaquim José da Silva Xavier",-->
-            <!--    "email": "tira@dentes.com",-->
-            <!--    "cpf": "123.123.123-24",-->
-            <!--    "crm": "02699999",-->
-            <!--    "logradouro": "AV. DOS MANANCIAIS",-->
-            <!--    "numero": "8000",-->
-            <!--    "complemento": "FD",-->
-            <!--    "bairro": "TAQUARA",-->
-            <!--    "cidade": "RIO DE JANEIRO",-->
-            <!--    "uf": "RJ"-->
-            <!--}-->
-                
-        
+            }
+
 ## Troca de Senha [/changePass]
 
 ## changePass [POST] 
 
 + Request (application/json)
-    
+
         {
             "userId": 2321,
             "password": "q1w2e3er4",
             "newPassword": "qwer1234"
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                 "msg": "Senha Inválida"
-            }            
-            
+            }
+
 ## Salvar dados bancários [/saveBank]
 
 ## saveBank [POST] 
 
 + Request (application/json)
-    
+
         {
             "userId": 2321,
             "bank": "171 - Banco do Cacique",
@@ -296,53 +283,49 @@ mdcll test api
         }
         
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
-                "status": "ok",
+                "status": "200",
                 "msg": "Deu ruim!"
-            }   
-            
-            <!--{-->
-            <!--    "status": 200,-->
-            <!--    "msg": "Ocorreu um erro ao realizar esta operação."-->
-            <!--}-->
-            
+            }
+
 ## Recuperar dados bancários [/bank]
 
 ## bank [POST] 
 
 + Request (application/json)
-    
+
         {
             "userId": 2321
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             {
                 "bank": "001 - BANCO DO BRASIL S.A.",
                 "agency": "007",
                 "accountNumber": "1232123"
-            }            
-                  
-## Recuperar Pesquisas Pendentes [/quests]
+            }
+        
+## Recuperar Pesquisas Pendentes [/campanhasDisponiveis]
 
 ## quests [POST] 
 
 + Request (application/json)
-    
+
         {
-            "userId": 2321
+            "userId": 2321,
+            "crm": 3123213,
         }
-        
+
 + Response 200 (application/json)
-        
+
     + Body
-    
+
             [
                 {
                     "id": 123,
@@ -358,8 +341,8 @@ mdcll test api
                     "description": "Viabilizar o cuidado do paciente com segurança é tema de grande de preocupação em todo o mundo, sendo inclusive alvo de Aliança Mundial criada pela OMS."
                 }
             ]
-            
-## Recuperar Pesquisas Respondidas [/answered]
+
+## Recuperar Pesquisas Respondidas [/campanhasRespondidas]
 
 ## answered [POST] 
 
@@ -381,8 +364,7 @@ mdcll test api
                     "description": "Você já parou para pensar se as suas atitudes perante o próximo são dignas e corretas? Como é o seu papel na sociedade?"
                 }
             ]
-            
-            
+
 ## Responder questão [/enviarResposta]
 
 ## enviarResposta [POST] 
@@ -392,7 +374,85 @@ Envia todas as respostas no fim da campanha
 + Request (application/json)
     
         {
-            "userId": 2321
+
+          "userId": 123,
+        
+          "campanhaId": 70,
+        
+          "respostas": [
+        
+            {
+        
+              "itemPaginaId": 936,
+        
+              "respostaId": 2794,
+        
+              "valor": ""
+        
+            },
+        
+            {
+        
+              "itemPaginaId": 937,
+        
+              "respostaId": 2798,
+        
+              "valor": ""
+        
+            },
+        
+            {
+        
+              "itemPaginaId": 938,
+        
+              "respostaId": 2800,
+        
+              "valor": "asd"
+        
+            },
+        
+            {
+        
+              "itemPaginaId": 939,
+        
+              "respostaId": 2804,
+        
+              "valor": ""
+        
+            },
+        
+            {
+        
+              "itemPaginaId": 940,
+        
+              "respostaId": 2801,
+        
+              "valor": ""
+        
+            },
+        
+            {
+        
+              "itemPaginaId": 1047,
+        
+              "respostaId": 328710912,
+        
+              "valor": ""
+        
+            },
+        
+            {
+        
+              "itemPaginaId": 1047,
+        
+              "respostaId": 328710943,
+        
+              "valor": ""
+        
+            }
+        
+          ]
+        
         }
         
 + Response 200 (application/json)
@@ -400,31 +460,19 @@ Envia todas as respostas no fim da campanha
     + Body
             
             {
-                "userId": 456,
-                "campanhaId": 123,
-                "respostas": [
-                    {
-                        "respostaId": 123,
-                        "valor": "jsdahdosajdpasjdsak",
-                    },
-                    {
-                        "respostaId": 456,
-                        "valor": "jsdahdosajdpasjdsak",
-                    },
-                    {
-                        "respostaId": 789,
-                        "valor": null,
-                    }
-                ]
-            }
             
-            
-## Obter questionário [/iniciarCampanha]
+              "status": 200,
+                
+              "msg": "Deu ruim!"
+                
+            }   
+
+## Obter questionário [/questionario]
 
 ## iniciarCampanha [POST] 
 
 + Request (application/json)
-    
+
         {
             "userId": 2321,
             "campanhaId": 123,
@@ -433,7 +481,7 @@ Envia todas as respostas no fim da campanha
 + Response 200 (application/json)
         
     + Body
-            
+
             {
               "id": 70,
               "titulo": "Perguntas sobre atendimento ao cliente do mercado B2B",
@@ -549,7 +597,7 @@ Envia todas as respostas no fim da campanha
                       "targetItemPagina": 938
                     }
                   ],
-                  "respostasCondicionadas": [],
+                  "respostasCondicionadas": [2795],
                   "targetPagina": 865,
                   "paginaId": null
                 },
@@ -610,6 +658,7 @@ Envia todas as respostas no fim da campanha
                         "id": 943,
                         "tipo": "V",
                         "url": "https://www.youtube.com/embed/lKDCjqB_AkQ",
+                        "urlEmbed": "https://www.youtube.com/embed/lKDCjqB_AkQ",
                         "targetPagina": 868,
                         "targetItemPagina": 943
                     },
@@ -709,14 +758,16 @@ Envia todas as respostas no fim da campanha
               ],
               "nomeEmpresa": null
             }    
-            
+
+
 ## Consultar Cep [/cep]
+
 ## cep [GET]
 
 + Response 200 (application/json)
 
     + Body
-    
+
             {
                 "uf": "RJ",
                 "complemento": "",
@@ -727,4 +778,40 @@ Envia todas as respostas no fim da campanha
                 "unidade": "",
                 "gia": "",
                 "cep": "21230-330"
+            }
+
+## Registrar Dispositivo [/deviceToken]
+
+## deviceToken [GET]
+
++ Request (application/json)
+    
+        {
+            "userId": 123,
+            "deviceToken": "dsadwq3wed3ohf0cnoc4uy9987fnej"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+              "status": 200,
+              "msg": "Deu ruim!"
+            }            
+
+## Vincular Google [/joinGoogle]
++ Request (application/json)
+
+        {
+            "userId": 2321,
+            "googleId": 123,
+        }
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "status": "200",
+                "msg": "Deu ruim!"
             }
